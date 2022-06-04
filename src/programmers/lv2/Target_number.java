@@ -1,5 +1,11 @@
 package programmers.lv2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+
 /**
  * packageName    : programmers.lv2
  * fileName       : Target_number
@@ -15,15 +21,29 @@ package programmers.lv2;
 public class Target_number {
 
       public static void main(String[] args) {
-
+            Solution solution = new Solution();
+            solution.solution(12345);
       }
 
       static class Solution {
-
-            public static int solution(int[] numbers, int target) {
-                  int answer = 0;
-
-                  return answer;
+      
+            public List<Integer> solution(long n) {
+                  System.out.println("n = " + n);
+                  
+                  String result = String.valueOf(n);
+                  String[] result_arr = result.split("");
+                  
+                  List<String> result_list;
+                  result_list = Arrays.asList(result_arr);
+                  System.out.println("result_list = " + result_list);
+                  Collections.reverse(result_list);
+      
+                  List<Integer> result_int_list = new ArrayList<>();
+                  for (String value : result_list) {
+                        result_int_list.add(Integer.valueOf(value));
+                  }
+                  
+                  return  result_int_list;
             }
 
       }
